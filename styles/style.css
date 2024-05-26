@@ -19,14 +19,18 @@ body {
   background-color: #1a1a1a;
 }
 
-.Sphere {
+.Out {
+  -webkit-animation: Move 2s ease-in-out infinite;
+          animation: Move 2s ease-in-out infinite;
+}
+.Out .Sphere {
   margin-top: 50px;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  background: linear-gradient(150deg, #8f52c2, #f081cf);
-  -webkit-animation: Rotate 1s ease-in-out infinite;
-          animation: Rotate 1s ease-in-out infinite;
+  background: linear-gradient(150deg, #8051a7, #f081cf, #fafafa);
+  -webkit-animation: Rotate 2s ease-in-out infinite;
+          animation: Rotate 2s ease-in-out infinite;
 }
 
 .Floor {
@@ -39,24 +43,60 @@ body {
 }
 
 @-webkit-keyframes Rotate {
-  from {
+  0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+  50% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
   }
 }
 
 @keyframes Rotate {
-  from {
+  0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+  50% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+}
+@-webkit-keyframes Move {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(240px);
+            transform: translateX(240px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@keyframes Move {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(240px);
+            transform: translateX(240px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
 }
 ul {
@@ -70,13 +110,16 @@ ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  animation: Ride 1s ease-in-out infinite reverse;
+  -webkit-animation: Ride 1s ease-in-out infinite;
+          animation: Ride 1s ease-in-out infinite;
 }
 ul li {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(hsl(0, 0%, 10%)));
-  background-image: linear-gradient(to bottom, #fafafa, hsl(0, 0%, 10%));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f5d6b3), to(hsl(0, 0%, 10%)));
+  background-image: linear-gradient(to bottom, #f5d6b3, hsl(0, 0%, 10%));
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
   height: 150px;
-  width: 10px;
+  width: 35px;
 }
 
 @-webkit-keyframes Ride {
@@ -85,8 +128,8 @@ ul li {
             transform: translateX(0);
   }
   to {
-    -webkit-transform: translateX(25.4%);
-            transform: translateX(25.4%);
+    -webkit-transform: translateX(-240px);
+            transform: translateX(-240px);
   }
 }
 
@@ -96,7 +139,7 @@ ul li {
             transform: translateX(0);
   }
   to {
-    -webkit-transform: translateX(25.4%);
-            transform: translateX(25.4%);
+    -webkit-transform: translateX(-240px);
+            transform: translateX(-240px);
   }
 }
