@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+    background-color: #1a1a1a;
+}
+
+.Sphere{
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(150deg, #8f52c2, #f081cf);
+    animation: Rotate 1s ease-in-out infinite;
+}
+
+.Floor{
+    background-image: linear-gradient(to bottom, #e6b378, hsl(0, 0%, 10%));
+    width: 100%;
+    flex-grow: 1;
+}
+
+@keyframes Rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    li{
+        background-image: linear-gradient(to bottom, #fafafa, hsl(0, 0%, 10%));
+    height: 150px;
+    width: 10px;
+    }
+    animation: Ride 1s ease-in-out infinite reverse;
+}
+
+@keyframes Ride {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(25.4%);
+    }
+}
